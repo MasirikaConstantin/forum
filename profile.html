@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+<html class="h-100" lang="fr">
+    <head>
+<script src="style/color-modes.js"></script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="kV1e6rDlQhFKoa00QAh1XNXNH4COHO50C1RJQYyy">
+
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Scripts -->
+        <link rel="preload" as="style" href="style/build/assets/app-DTc40osq.css" /><link rel="modulepreload" href="style/build/assets/app-9mbrzSRH.js" /><link rel="stylesheet" href="style/build/assets/app-DTc40osq.css" /><script type="module" src="style/build/assets/app-9mbrzSRH.js"></script>    </head>
+    <body class="d-flex flex-column h-100">
+
+        <link rel="stylesheet" href="style/bootstrap-icons/bootstrap-icons.css">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+      <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+    </symbol>
+  </svg>
+ 
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle badge bg-primary ">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+            id="bd-theme"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+            aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active " width="1em" height="1em"><use href="#circle-half"></use></svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow " aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center " data-bs-theme-value="light" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+        </button>
+      </li>
+    </ul>
+  </div>  </div>
+  
+  
+
+
+        <div class=" bg-body-100">
+            <link rel="stylesheet" href="style/bootstrap.min.css">
+
+
+
+<nav x-data="{ open: false }" class="bg-body border-b border-body-150">
+    
+    <!-- Primary Navigation Menu -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="dashboard.html">
+                        <svg viewBox="0 0 316 316" xmlns="http://www.w3.org/2000/svg" class="block h-9 w-auto fill-current text-body-800">
+    <path d="M305.8 81.125C305.77 80.995 305.69 80.885 305.65 80.755C305.56 80.525 305.49 80.285 305.37 80.075C305.29 79.935 305.17 79.815 305.07 79.685C304.94 79.515 304.83 79.325 304.68 79.175C304.55 79.045 304.39 78.955 304.25 78.845C304.09 78.715 303.95 78.575 303.77 78.475L251.32 48.275C249.97 47.495 248.31 47.495 246.96 48.275L194.51 78.475C194.33 78.575 194.19 78.725 194.03 78.845C193.89 78.955 193.73 79.045 193.6 79.175C193.45 79.325 193.34 79.515 193.21 79.685C193.11 79.815 192.99 79.935 192.91 80.075C192.79 80.285 192.71 80.525 192.63 80.755C192.58 80.875 192.51 80.995 192.48 81.125C192.38 81.495 192.33 81.875 192.33 82.265V139.625L148.62 164.795V52.575C148.62 52.185 148.57 51.805 148.47 51.435C148.44 51.305 148.36 51.195 148.32 51.065C148.23 50.835 148.16 50.595 148.04 50.385C147.96 50.245 147.84 50.125 147.74 49.995C147.61 49.825 147.5 49.635 147.35 49.485C147.22 49.355 147.06 49.265 146.92 49.155C146.76 49.025 146.62 48.885 146.44 48.785L93.99 18.585C92.64 17.805 90.98 17.805 89.63 18.585L37.18 48.785C37 48.885 36.86 49.035 36.7 49.155C36.56 49.265 36.4 49.355 36.27 49.485C36.12 49.635 36.01 49.825 35.88 49.995C35.78 50.125 35.66 50.245 35.58 50.385C35.46 50.595 35.38 50.835 35.3 51.065C35.25 51.185 35.18 51.305 35.15 51.435C35.05 51.805 35 52.185 35 52.575V232.235C35 233.795 35.84 235.245 37.19 236.025L142.1 296.425C142.33 296.555 142.58 296.635 142.82 296.725C142.93 296.765 143.04 296.835 143.16 296.865C143.53 296.965 143.9 297.015 144.28 297.015C144.66 297.015 145.03 296.965 145.4 296.865C145.5 296.835 145.59 296.775 145.69 296.745C145.95 296.655 146.21 296.565 146.45 296.435L251.36 236.035C252.72 235.255 253.55 233.815 253.55 232.245V174.885L303.81 145.945C305.17 145.165 306 143.725 306 142.155V82.265C305.95 81.875 305.89 81.495 305.8 81.125ZM144.2 227.205L100.57 202.515L146.39 176.135L196.66 147.195L240.33 172.335L208.29 190.625L144.2 227.205ZM244.75 114.995V164.795L226.39 154.225L201.03 139.625V89.825L219.39 100.395L244.75 114.995ZM249.12 57.105L292.81 82.265L249.12 107.425L205.43 82.265L249.12 57.105ZM114.49 184.425L96.13 194.995V85.305L121.49 70.705L139.85 60.135V169.815L114.49 184.425ZM91.76 27.425L135.45 52.585L91.76 77.745L48.07 52.585L91.76 27.425ZM43.67 60.135L62.03 70.705L87.39 85.305V202.545V202.555V202.565C87.39 202.735 87.44 202.895 87.46 203.055C87.49 203.265 87.49 203.485 87.55 203.695V203.705C87.6 203.875 87.69 204.035 87.76 204.195C87.84 204.375 87.89 204.575 87.99 204.745C87.99 204.745 87.99 204.755 88 204.755C88.09 204.905 88.22 205.035 88.33 205.175C88.45 205.335 88.55 205.495 88.69 205.635L88.7 205.645C88.82 205.765 88.98 205.855 89.12 205.965C89.28 206.085 89.42 206.225 89.59 206.325C89.6 206.325 89.6 206.325 89.61 206.335C89.62 206.335 89.62 206.345 89.63 206.345L139.87 234.775V285.065L43.67 229.705V60.135ZM244.75 229.705L148.58 285.075V234.775L219.8 194.115L244.75 179.875V229.705ZM297.2 139.625L253.49 164.795V114.995L278.85 100.395L297.21 89.825V139.625H297.2Z"/>
+</svg>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="dashboard.html">
+    Tableau de bord
+</a>
+                </div>
+
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="forum.html">
+    Accueil
+</a>
+                </div>
+
+
+            </div>
+                        <a href="#" class="d-block link-dark text-decoration-none " id="dropdownUserd1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="storage/profilimage/AgFoZfmP0V0QEt0m7IIiMLc650a1TrOLBK20RxuC.jpg" alt="mdo" style="width:60px ; height:60px" class="rounded-circle">
+                          </a>
+                        <!-- Settings Dropdown -->
+            <div class="hidden sm:flex sm:items-center sm:ms-6" class="text-body bg-body">
+
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
+    <div @click="open = ! open">
+        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-body-500 bg-body hover:text-body-700 focus:outline-none transition ease-in-out duration-150">
+                            <div>COCO</div>
+
+                            <div class="ms-1">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+    </div>
+
+    <div x-show="open"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 scale-95"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-95"
+            class="absolute z-50 mt-2 w-48 rounded-md shadow-lg ltr:origin-top-right rtl:origin-top-left end-0"
+            style="display: none;"
+            @click="open = false">
+        <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-body">
+            <a class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out  text-body btn bg-body" href="dashboard.html">Profil</a>
+
+
+
+                        <!-- Authentication -->
+                        <form method="POST" action="" class=" bg-body">
+                            <input type="hidden" name="_token" value="kV1e6rDlQhFKoa00QAh1XNXNH4COHO50C1RJQYyy" autocomplete="off">
+                            <a class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out text-body btn bg-body" href="#" onclick="event.preventDefault();
+                                                this.closest('form').submit();">Se déconnecter</a>
+                        </form>
+        </div>
+    </div>
+</div>
+                
+                
+
+
+
+            </div>
+
+            <!-- Hamburger -->
+            <div class="-me-2 flex items-center sm:hidden">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-body-400 hover:text-body-500 hover:bg-body-100 focus:outline-none focus:bg-body-100 focus:text-body-500 transition duration-150 ease-in-out">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="dashboard.html">
+    Tableau de bord
+</a>
+        </div>
+
+        <!-- Responsive Settings Options -->
+        <div class="pt-4 pb-1 border-t border-body-200">
+            <div class="px-4">
+                <div class="font-medium text-base text-body-800">COCO</div>
+                <div class="font-medium text-sm text-body-500">elcoddnstadnt73@gmail.com</div>
+            </div>
+
+            <div class="mt-3 space-y-1 text-body bg-body">
+                <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out text-body bg-body" href="dashboard.html">
+    Profil
+</a>
+
+                <!-- Authentication -->
+                <form method="POST" action="#">
+                    <input type="hidden" name="_token" value="kV1e6rDlQhFKoa00QAh1XNXNH4COHO50C1RJQYyy" autocomplete="off">
+                    <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="#" onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+    Se déconnecter
+</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+<script src="style/bootstrap.bundle.min.js"></script>
+
+
+            <!-- Page Heading -->
+                            <header class="bg-body shadow">
+                    <div class="max-w-7xl text-body bg-body mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        <h2 class="font-semibold text-xl text-body-800 leading-tight">
+            Profil
+        </h2>
+                    </div>
+                </header>
+            
+            <!-- Page Content -->
+            <main>
+                <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+            <div class="p-4 sm:p-8 bg-body shadow sm:rounded-lg">
+                <div class="max-w-xl bg-body">
+                    <section>
+    <header>
+        <h2 class="text-lg font-medium text-body-900">
+            Informations du profil
+        </h2>
+
+        <p class="mt-1 text-sm text-body-600">
+            Modifier le profil associé à votre compte ainsi que votre adresse e-mail.
+        </p>
+    </header>
+
+    <form id="send-verification" method="post" action="">
+        <input type="hidden" name="_token" value="kV1e6rDlQhFKoa00QAh1XNXNH4COHO50C1RJQYyy" autocomplete="off">    </form>
+
+    <form method="post" action="profile.html" class="mt-6 space-y-6">
+        <input type="hidden" name="_token" value="kV1e6rDlQhFKoa00QAh1XNXNH4COHO50C1RJQYyy" autocomplete="off">        <input type="hidden" name="_method" value="patch">
+        <div>
+            <label class="block font-medium text-sm text-gray-700  text-body" for="name">
+    Nom
+</label>
+            <input  class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full bg-body" id="name" name="name" type="text" value="COCO" required="required" autofocus="autofocus" autocomplete="name">
+                    </div>
+
+        <div>
+            <label class="block font-medium text-sm text-gray-700  text-body" for="email">
+    E-mail
+</label>
+            <input  class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full bg-body" id="email" name="email" type="email" value="elcoddnstadnt73@gmail.com" required="required" autocomplete="username">
+            
+                    </div>
+
+        <div class="flex items-center gap-4">
+            <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-body uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+    Sauvegarder
+</button>
+
+                    </div>
+    </form>
+</section>
+                </div>
+            </div>
+
+
+            <div class="p-4 sm:p-8 bg-body shadow sm:rounded-lg">
+                <div class="max-w-xl">
+                    <section>
+    <header>
+        <h2 class="text-lg font-medium text-body-900">
+            Ajouter une Photo de Profil
+        </h2>
+
+        <p class="mt-1 text-sm text-body-600">
+            Ajouter une photo pour une meilleur identification
+        </p>
+    </header>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <style>
+      
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    </style>
+
+    <form method="post" action="#" class="" enctype="multipart/form-data" >
+        <input type="hidden" name="_token" value="kV1e6rDlQhFKoa00QAh1XNXNH4COHO50C1RJQYyy" autocomplete="off">        <input type="hidden" name="_method" value="put">
+        
+
+
+
+
+
+        <main class="mt-1">
+          
+          COCO
+            <div class="row" data-masonry='{"percentPosition": true }'>
+              
+              <div class="mb-1">
+                <label for="formFile" class="form-label">Choisir une photo</label>
+                <input class="form-control"  name="image" type="file" id="fileUpload">
+              </div>
+              
+
+              <div class="col-sm mb-3 ">
+                <div class="card" style="width: 322px!important; height: 250px;">
+                
+                    
+                    <img id='imageDiv' class="h-s100" style=" height:220px ; width: 100% ; height: 250px; object-fit: cover "  />
+                  
+                  
+                  
+                </div>
+                
+              </div>
+            </div>
+            
+          
+          </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+        <div class="flex items-center gap-4">
+            <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-body uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+    Sauvegarder
+</button>
+
+                    </div>
+    </form>
+</section>
+                </div>
+            </div>
+
+            <div class="p-4 sm:p-8 bg-body shadow sm:rounded-lg">
+                <div class="max-w-xl">
+                    <section>
+    <header>
+        <h2 class="text-lg font-medium text-body-900">
+            Mettre à jour le mot de passe
+        </h2>
+
+        <p class="mt-1 text-sm text-body-600">
+            Assurez-vous d&#039;utiliser un mot de passe long et aléatoire pour sécuriser votre compte.
+        </p>
+    </header>
+
+    <form method="post" action="#" class="mt-6 space-y-6">
+        <input type="hidden" name="_token" value="kV1e6rDlQhFKoa00QAh1XNXNH4COHO50C1RJQYyy" autocomplete="off">        <input type="hidden" name="_method" value="put">
+        <div>
+            <label class="block font-medium text-sm text-gray-700  text-body" for="update_password_current_password">
+    Mot de passe actuel
+</label>
+            <input  class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full bg-body" id="update_password_current_password" name="current_password" type="password" autocomplete="current-password">
+                    </div>
+
+        <div>
+            <label class="block font-medium text-sm text-gray-700  text-body" for="update_password_password">
+    Nouveau mot de passe
+</label>
+            <input  class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full bg-body" id="update_password_password" name="password" type="password" autocomplete="new-password">
+                    </div>
+
+        <div>
+            <label class="block font-medium text-sm text-gray-700  text-body" for="update_password_password_confirmation">
+    Confirmer le mot de passe
+</label>
+            <input  class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full bg-body" id="update_password_password_confirmation" name="password_confirmation" type="password" autocomplete="new-password">
+                    </div>
+
+        <div class="flex items-center gap-4 bg-body">
+            <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-body uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+    Sauvegarder
+</button>
+
+                    </div>
+    </form>
+</section>
+                </div>
+            </div>
+
+            <div class="p-4 sm:p-8 bg-body shadow sm:rounded-lg">
+                <div class="max-w-xl">
+                    <section class="space-y-6">
+    <header>
+        <h2 class="text-lg font-medium text-body-900">
+            Supprimer le compte
+        </h2>
+
+        <p class="mt-1 text-sm text-body-600">
+            Une fois que votre compte est supprimé, toutes vos données sont supprimées définitivement. Avant de supprimer votre compte, veuillez télécharger vos données.
+        </p>
+    </header>
+
+    <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-body uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150" x-data="" x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')">
+    Supprimer le compte
+</button>
+
+    <div
+    x-data="{
+        show: false,
+        focusables() {
+            // All focusable element types...
+            let selector = 'a, button, input:not([type=\'hidden\']), textarea, select, details, [tabindex]:not([tabindex=\'-1\'])'
+            return [...$el.querySelectorAll(selector)]
+                // All non-disabled elements...
+                .filter(el => ! el.hasAttribute('disabled'))
+        },
+        firstFocusable() { return this.focusables()[0] },
+        lastFocusable() { return this.focusables().slice(-1)[0] },
+        nextFocusable() { return this.focusables()[this.nextFocusableIndex()] || this.firstFocusable() },
+        prevFocusable() { return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable() },
+        nextFocusableIndex() { return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1) },
+        prevFocusableIndex() { return Math.max(0, this.focusables().indexOf(document.activeElement)) -1 },
+    }"
+    x-init="$watch('show', value => {
+        if (value) {
+            document.body.classList.add('overflow-y-hidden');
+            setTimeout(() =&gt; firstFocusable().focus(), 100)
+        } else {
+            document.body.classList.remove('overflow-y-hidden');
+        }
+    })"
+    x-on:open-modal.window="$event.detail == 'confirm-user-deletion' ? show = true : null"
+    x-on:close-modal.window="$event.detail == 'confirm-user-deletion' ? show = false : null"
+    x-on:close.stop="show = false"
+    x-on:keydown.escape.window="show = false"
+    x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()"
+    x-on:keydown.shift.tab.prevent="prevFocusable().focus()"
+    x-show="show"
+    class="fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50"
+    style="display: none;"
+>
+    <div
+        x-show="show"
+        class="fixed inset-0 transform transition-all"
+        x-on:click="show = false"
+        x-transition:enter="ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+    >
+        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+    </div>
+
+    <div
+        x-show="show"
+        class="mb-6 bg-body rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:max-w-2xl sm:mx-auto"
+        x-transition:enter="ease-out duration-300"
+        x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+        x-transition:leave="ease-in duration-200"
+        x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+        x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+    >
+        <form method="post" action="#" class="p-6">
+            <input type="hidden" name="_token" value="kV1e6rDlQhFKoa00QAh1XNXNH4COHO50C1RJQYyy" autocomplete="off">            <input type="hidden" name="_method" value="delete">
+            <h2 class="text-lg font-medium text-body-900">
+                Êtes-vous sûr·e de vouloir supprimer votre compte ?
+            </h2>
+
+            <p class="mt-1 text-sm text-body-600">
+                Une fois que votre compte est supprimé, toutes les données associées seront supprimées définitivement. Pour confirmer que vous voulez supprimer définitivement votre compte, renseignez votre mot de passe.
+            </p>
+
+            <div class="mt-6">
+                <label class="block font-medium text-sm text-gray-700 sr-only" for="password">
+    Mot de passe
+</label>
+
+                <input  class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-3/4" id="password" name="password" type="password" placeholder="Mot de passe">
+
+                            </div>
+
+            <div class="mt-6 flex justify-end">
+                <button type="button" class="inline-flex items-center px-4 py-2 bg-body border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 transition ease-in-out duration-150" x-on:click="$dispatch('close')">
+    Annuler
+</button>
+
+                <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-body uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150 ms-3">
+    Supprimer le compte
+</button>
+            </div>
+            
+        </form>
+        
+    </div>
+</div>
+</section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('fileUpload').addEventListener('change', function() {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('imageDiv').src = e.target.result;
+            }
+            reader.readAsDataURL(this.files[0]);
+        });
+        </script>
+        <script>
+        document.getElementById('fileUpload').addEventListener('change', function() {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var img = document.createElement('img');
+                img.src = e.target.result;
+                document.getElementById('imageDiv').appendChild(img);
+            }
+            reader.readAsDataURL(this.files[0]);
+        });
+        </script>
+        
+            </main>
+        </div>
+        
+    </body>
+</html>
